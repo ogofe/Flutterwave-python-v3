@@ -1,9 +1,19 @@
-# Rave_Python
+## Table of Contents
 
-## Introduction
+- [About](#about)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Running tests](#test)
+- [Deployment](#deployment)
+- [Built Using](#build-tools)
+- [References](#references)
+
+<a id="about"></a>
+
+## About
 This is a Python wrapper around the [API](https://developer.flutterwave.com/v3.0/reference) for [Rave by Flutterwave](https://rave.flutterwave.com).
 
-#### Payment types implemented:
+Payment types implemented:
 * Card Payments
 * Bank Account Payments - NG debit, UK debits, USD and ZAR ACH debits
 * Francophone Mobile Money Payments
@@ -13,8 +23,7 @@ This is a Python wrapper around the [API](https://developer.flutterwave.com/v3.0
 * Uganda Mobile Money Payments
 * Zambia Mobile Money Payments
 
-
-#### Other features include:
+Other features include:
 * Bank listing
 * Transaction Beneficiaries
 * Bills and E-bills payment
@@ -28,28 +37,48 @@ This is a Python wrapper around the [API](https://developer.flutterwave.com/v3.0
 * Virtual Account
 * Virtual Card
 
+<a id="getting-started"></a>
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+See [references](#references) for links to dashboard and API documentation.
+
+
+### Prerequisites
+
+```
+Python version >= 2.7
+Flutterwave version 3 API keys
+
+```
+
+
 ## Installation
 To install, run
 
 ```sh
 pip install rave_python_v3
 ```
+<a id="usage"></a>
+
+## Usage
 
 Note: This is currently under active development
-## Import Package
+### Import Package
 The base class for this package is 'Rave'. To use this class, add:
 
 ```py
 from rave_python import Rave
 ```
 
-## Initialization
+### Initialization
 
 #### To instantiate in sandbox:
 To use Rave, instantiate the Rave class with your public key. We recommend that you store your secret key and encryption key in an environment variable named, ```RAVE_SECRET_KEY``` and ```RAVE_ENCRYPTION_KEY```. Instantiating your rave object is therefore as simple as:
 
 ```py
-rave = Rave("YOUR_PUBLIC_KEY")
+rave = Rave("YOUR_PUBLIC_KEY", "YOUR_SECRET_KEY", "YOUR_ENCRYPTION_KEY")
 ```
 
 ####  To instantiate without environment variables (Sandbox):
@@ -2594,3 +2623,26 @@ python test.py
 
 ## Support
 For further assistance in using the SDK, you can contact the Developers on [Slack](https://join.slack.com/t/flutterwavedevelopers/shared_invite/enQtNTk3MjgxMjU3ODI5LWFkMjBkYTc0ZGJhM2Q5MTY3YjFkYzAyYmM1ZDZjZjUwMjE4YTc2NjQ1ZGM5ZWE4NDUxMzc4MmExYmI1Yjg5ZWU) and [Email](mailto:developers@flutterwavego.com). You can get more information about the amazing features here [here](https://developer.flutterwave.com/reference#introduction).
+
+<a id="deployment"></a>
+
+## Deployment
+
+- Switch to Live Mode on the Dashboard settings page
+- Use the Live Public API key 
+
+<a id="build-tools"></a>
+
+##  Built Using
+
+- [Python](https://www.python.org/) 
+- [PIP](https://www.pypi.org/)
+
+
+<a id="references"></a>
+
+## Flutterwave API  References
+
+- [Flutterwave API Doc](https://developer.flutterwave.com/docs)
+- [Flutterwave Inline Payment Doc](https://developer.flutterwave.com/docs/flutterwave-inline)
+- [Flutterwave Dashboard](https://dashboard.flutterwave.com/login)  
