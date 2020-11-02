@@ -97,13 +97,13 @@ class Card(Payment):
             endpoint = self._baseUrl + self._endpointMap["card"]["charge"] + "?type=" + cardDetails["type"]
             requiredParameters = ["card_number", "cvv", "expiry_month", "expiry_year", "amount", "email", "currency", "tx_ref"]
             # optionalParameters = ["phonenumber", "firstname", "lastname"]
-        else: 
-            if "charge_type" in cardDetails and cardDetails["charge_type"] == 'preauth':
-                endpoint = self._baseUrl + self._endpointMap["preauth"]["charge"]
-            else: 
-                endpoint = self._baseUrl + self._endpointMap["card"]["chargeSavedCard"]
+        # else: 
+        #     if "charge_type" in cardDetails and cardDetails["charge_type"] == 'preauth':
+        #         endpoint = self._baseUrl + self._endpointMap["preauth"]["charge"]
+        #     else: 
+        #         endpoint = self._baseUrl + self._endpointMap["card"]["chargeSavedCard"]
 
-            requiredParameters = ["currency", "token", "country", "amount", "email", "tx_ref", "IP"]
+            requiredParameters = ["currency", "country", "amount", "email", "tx_ref"]
             # optionalParameters = ["firstname", "lastname"]
             # add token to requiredParameters
             # requiredParameters.append("token")
@@ -111,7 +111,7 @@ class Card(Payment):
         if not ("tx_ref" in cardDetails):
             cardDetails.update({"tx_ref":generateTransactionReference()})
 
-        
+        print (endpoint)
         return super(Card, self).charge(cardDetails, requiredParameters, endpoint)
     
 

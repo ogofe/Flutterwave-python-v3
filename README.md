@@ -100,27 +100,12 @@ To initialize in production, simply set the ```production``` flag to ```True```.
 rave = Rave("YOUR_PUBLIC_KEY", "YOUR_SECRET_KEY", "YOUR_ENCRYPTION_KEY", usingEnv = False, production=True)
 ```
 
-# Features
-This is the documentation for all of the components of rave_python
+#### Payments
+To successfully collect payments via Flutterwave, a charge transaction must first be initiated. Once initiated, the transaction must be validated and verified. Please refer to our [developer docs]() for more information on parameter that should be passed into payload.
 
-## ```rave.Card```
-This is used to facilitate card transactions.
+##### Card Payments
 
-**Functions included:**
-
-* ```.charge```
-
-* ```.validate```
-
-* ```.verify```
-
-* ```.getTypeOfArgsRequired```
-
-* ```.updatePayload```
-
-<br>
-
-### ```.charge(payload)```
+###### Card Charge
 This is called to start a card transaction. The payload should be a dictionary containing card information. It should have the parameters:
 
 * ```cardno```,

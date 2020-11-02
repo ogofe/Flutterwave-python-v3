@@ -7,7 +7,7 @@ class RaveBase(object):
     def __init__(self, publicKey=None, secretKey=None, encryptionKey=None, production=False, usingEnv=True):
 
         # config variables (protected)
-        self._baseUrlMap = ["https://ravesandboxapi.flutterwave.com/", "https://rave-api-v2.herokuapp.com/"]
+        self._baseUrlMap = ["https://api.flutterwave.com/", "https://api.flutterwave.com/"]
         self._endpointMap = {
             "beneficiaries":{
                 "create": "v3/beneficiaries",
@@ -32,7 +32,6 @@ class RaveBase(object):
                 "charge": "v3/charges",
                 "validate": "v3/charges/validate-charge",
                 "verify": "v3/transactions",
-                # "chargeSavedCard": "flwv3-pug/getpaidx/api/tokenized/charge",
             },
             "ebills": {
                 "create": "v3/ebills",
