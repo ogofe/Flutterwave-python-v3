@@ -2,6 +2,8 @@
     <img title="Flutterwave" height="200" src="https://flutterwave.com/images/logo-colored.svg" width="50%"/>
 </p>
 
+:warning: **This repository is under heavy maintainance!**
+
 ## Table of Contents
 
 - [About](#about)
